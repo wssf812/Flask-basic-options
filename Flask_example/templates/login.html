@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+</head>
+<body>
+<!--form标签的作用是用于将其他表单标签"包"起来，以便作为一个整体，可以提交数据到服务器。-->
+    <form method="post">
+        <!--在渲染模板时，不需要手动分配，可以直接在模板中使用的模板变量及函数：config、request、url_for()、get_flashed_messages()
+            在Flask中，有一些特殊的变量和方法是可以在模板文件中直接访问的。-->
+
+
+         <!--拿到闪现的消息-->
+        <div>
+            {{get_flashed_messages()[0]}}
+        </div>
+        <!--获取文本框标签名以及文本框-->
+        {{form.username.label}}{{form.username}}<br>
+        {{form.password.label}}{{form.password}}<br>
+        {{form.submit}}<br>
+         <!--设置跨站强求伪造token-->
+        {{form.csrf_token}}
+
+    </form>
+
+</body>
+</html>

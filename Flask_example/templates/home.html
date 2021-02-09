@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+</head>
+<body>
+    <!--返回当前用户-->
+    <h1>hello world! {{current_user}}</h1>
+    <div>
+        <!--反向生成url(给指定的函数构造URL)-->
+        <a href="{{url_for('account.loginout')}}">退出</a>
+    </div>
+</body>
+</html>
